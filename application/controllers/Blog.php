@@ -28,7 +28,8 @@ class Blog extends CI_Controller {
 			redirect('blog/index');
 
 
-		$this->load->view('blog/login');
+		$data['base_url'] = base_url();
+		$this->load->view('blog/login', $data);
 
 	}
 
@@ -42,7 +43,8 @@ class Blog extends CI_Controller {
 		if ($this->form_validation->run()) {
 			redirect('blog/index');
 		} else {
-			$this->load->view('blog/login');
+			$data['base_url'] = base_url();
+			$this->load->view('blog/login',$data);
 		}
 
 	}
